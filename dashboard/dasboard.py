@@ -51,6 +51,17 @@ orders_items_df = pd.DataFrame({'Product ID': orders_items_df.index, 'Number of 
 orders_seller_df = pd.DataFrame({'Seller ID': orders_seller_df.index, 'Number of Orders': orders_seller_df.values})
 orders_payments_df = pd.DataFrame({'Payment Type': orders_payments_df.index, 'Number of Payment': orders_payments_df.values})
 
+datetime_columns = ["shipping_limit_date",]
+all_df.sort_values(by="shipping_limit_date", inplace=True)
+all_df.reset_index(inplace=True)
+
+for column in datetime_columns:
+    all_df[column] = pd.to_datetime(all_df[column])
+
+# Filter data
+min_date = all_df["shipping_limit_date"].min()
+max_date = all_df["shipping_limit_date"].max()
+
 st.title('SUBMISION')
  
 with st.sidebar:
@@ -58,6 +69,16 @@ with st.sidebar:
     st.text('First Project SAP')
     
     st.text('E-commerce-public-dataset')
+
+    # Mengambil start_date & end_date dari shipping_limit_date
+    start_date, end_date = st.date_input(
+        label='Waktu yang diinginkan',min_value=min_date,
+        max_value=max_date,
+        value=[min_date, max_date]
+    )
+
+    main_df = all_df[(all_df["shipping_limit_date"] >= str(start_date)) & 
+                    (all_df["shipping_limit_date"] <= str(end_date))]
 
     text = st.text_area('Please Comment About my project')
     st.write('Good comment: ', text)

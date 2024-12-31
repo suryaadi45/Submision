@@ -20,5 +20,3 @@ pip install -r requirements.txt
 ```
 streamlit run dashboard/dasboard.py
 ```
-
-posisi terminal aktif masih di folder root bukan masuk ke folder submission

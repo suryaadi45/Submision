@@ -68,6 +68,9 @@ with st.sidebar:
                 'Metode pembayaran yang sering digunakan'
                 )
     )
+        
+    text = st.text_area('Please Comment About my project')
+    st.write('Good comment: ', text)
 
  #opsi yang ada pada sidebar beserta logikanya   
 if option == 'Daerah dengan pembelian terbanyak':

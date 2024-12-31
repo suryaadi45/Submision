@@ -32,8 +32,8 @@ def create_orders_payments_df(df):
 
 
 # Load cleaned data
-df1 = pd.read_csv(r'https://raw.githubusercontent.com/suryaadi45/Submision/refs/heads/main/dasboard/some_data.csv')
-df2 = pd.read_csv(r'https://raw.githubusercontent.com/suryaadi45/Submision/refs/heads/main/dasboard/customers_dataset.csv')
+df1 = pd.read_csv(r'https://raw.githubusercontent.com/suryaadi45/Submision/refs/heads/main/dashboard/some_data.csv')
+df2 = pd.read_csv(r'https://raw.githubusercontent.com/suryaadi45/Submision/refs/heads/main/dashboard/customers_data.csv')
 
 all_df = pd.concat([df1, df2])
 

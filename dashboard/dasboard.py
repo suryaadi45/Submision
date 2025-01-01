@@ -34,8 +34,8 @@ def create_orders_payments_df(df):
 
 
 # Load cleaned data
-df1 = pd.read_csv(r'D:\Submision_Analisis_Data\CSV\some_data.csv')
-df2 = pd.read_csv(r'D:\Submision_Analisis_Data\CSV\customers_data.csv')
+df1 = pd.read_csv('dashboard/some_data.csv')
+df2 = pd.read_csv('dashboard/customers_data.csv')
 
 all_df = pd.concat([df1, df2])
 
